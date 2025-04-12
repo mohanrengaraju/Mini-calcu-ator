@@ -10,8 +10,8 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/', async (req, res) => {
-  const calculations = await Calculation.find();
-  res.json(calculations);
+  const calculation = await Calculation.find();
+  res.json(calculation);
 });
 
 module.exports = router;
