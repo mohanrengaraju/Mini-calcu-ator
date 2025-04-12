@@ -11,7 +11,7 @@ function Calculator() {
       const evalResult = eval(expression);
       setResult(evalResult);
 
-      axios.post('http://localhost:5000/api/calculations', {
+      axios.post('https://mini-calcu-ator.onrender.com/api/calculations', {
         expression,
         result: evalResult
       });
@@ -23,7 +23,7 @@ function Calculator() {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/calculations')
+    axios.get('https://mini-calcu-ator.onrender.com/api/calculations')
       .then(res => setHistory(res.data));
   }, [result]);
 
