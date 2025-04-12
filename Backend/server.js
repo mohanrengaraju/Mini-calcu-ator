@@ -4,7 +4,11 @@ const cors = require('cors');
 const app = express();
 const calculationRoutes = require('./routers/calculation');
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://minicalc-mu.vercel.app', 
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 app.use(express.json());
 app.use('/api/calculations', calculationRoutes);
 
